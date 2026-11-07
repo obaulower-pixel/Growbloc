@@ -1,0 +1,5 @@
+.rhero{display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:center;background:radial-gradient(460px 220px at 0 0,rgba(226,59,59,.22),transparent 70%),var(--p)}
+.rhero h1{font-size:clamp(28px,5vw,44px);margin-bottom:8px}.warn2{display:flex;gap:8px;align-items:center;margin-top:12px;color:var(--gold);font-weight:700}
+.rcard{position:relative;display:grid;justify-items:center;gap:8px;text-align:center;padding:24px 18px}.rcard .btn{width:100%}.rcard.popular{border-color:#E23B3B;box-shadow:0 0 0 1px #E23B3B,0 14px 36px rgba(226,59,59,.22)}
+.rcard .badge{position:absolute;top:12px;right:12px}.rbx{filter:drop-shadow(0 6px 14px rgba(226,59,59,.4))}.rco{max-width:640px}
+@media(max-width:560px){.rhero{grid-template-columns:1fr;justify-items:start}}

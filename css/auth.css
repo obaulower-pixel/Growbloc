@@ -1,0 +1,6 @@
+.auth{max-width:520px;margin:0 auto;padding:56px 16px 48px}
+.title{text-align:center;font-size:clamp(34px,10vw,54px);font-weight:900;margin:36px 0 46px}
+.tabs{display:flex;gap:12px;padding:0 14px}
+.tab{display:flex;align-items:center;gap:8px;padding:14px 22px;border-radius:12px 12px 0 0;background:var(--btn2);color:#deddf1;font-weight:900;font-size:18px;text-decoration:none;text-shadow:1px 1px 0 #000;box-shadow:3px 0 0 #000;position:relative;z-index:1;margin-bottom:-5px}
+.tab.on{background:var(--btn);color:#2b1a00;text-shadow:none}.auth .panel{padding:26px 24px}.auth h2{font-size:28px}.sub{font-weight:700;margin:6px 0 10px}
+.auth input{height:60px}.hint{margin-top:16px;font-weight:800}.hint a{text-decoration:underline}

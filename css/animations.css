@@ -1,0 +1,17 @@
+@keyframes fade{from{opacity:0;transform:translateY(10px)}to{opacity:1;transform:none}}
+@keyframes float{50%{transform:translateY(-8px)}}@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes pop{from{opacity:0;margin-bottom:-12px}}
+.fade{animation:fade .35s ease backwards}.toast{animation:pop .25s ease}
+.btn.load{color:transparent;text-shadow:none}.btn.load::after{content:"";position:absolute;inset:0;margin:auto;width:20px;height:20px;border:3px solid #fff;border-top-color:transparent;border-radius:50%;animation:spin .7s linear infinite}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+/* Animasi logo WL / DL / BGL dan koin Robux: melayang pelan + cahaya berdenyut.
+   Hanya transform dan filter pada gambarnya, jadi layout tidak bergeser.
+   Mode "kurangi gerakan" otomatis mematikannya lewat aturan di atas. */
+@keyframes logofloat{0%,100%{transform:translateY(0);filter:drop-shadow(0 5px 8px rgba(var(--gl,169,160,255),.3))}50%{transform:translateY(-7px);filter:drop-shadow(0 13px 16px rgba(var(--gl,169,160,255),.62))}}
+@keyframes logoglow{0%,100%{filter:drop-shadow(0 4px 7px rgba(var(--gl,169,160,255),.28))}50%{filter:drop-shadow(0 8px 15px rgba(var(--gl,169,160,255),.6))}}
+.artbox:not(.sm) .art,.rimg .art,.rcard .rbx,.rhero .rbx{animation:logofloat 3.2s ease-in-out infinite}
+.artrow .art{animation:logoglow 3.2s ease-in-out infinite;animation-delay:calc(var(--i,0)*.35s)}
+.art[src$="/wl.png"]{--gl:200,210,225}.art[src$="/dl.png"]{--gl:127,214,245}.art[src$="/bgl.png"]{--gl:80,120,255}
+svg.art{--gl:255,212,90}.rbx{--gl:226,59,59}
+.grid>:nth-child(2n) .art,.grid>:nth-child(2n) .rbx{animation-delay:-1.1s}
+.grid>:nth-child(3n) .art,.grid>:nth-child(3n) .rbx{animation-delay:-2.2s}

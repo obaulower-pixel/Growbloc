@@ -1,0 +1,8 @@
+(function(G){
+G.backupView=()=>{const kb=(new Blob([localStorage.getItem('growblox_v1')||'']).size/1024).toFixed(1);
+return `<div class="panel"><h3>Storage Information</h3><p>Terpakai: ${kb} KB dari kira-kira 5000 KB (batas browser berbeda-beda).</p><p class="mu">Data tersimpan otomatis di LocalStorage browser ini. Data tidak tersinkron ke perangkat lain dan bisa hilang bila data browser dibersihkan. Ekspor backup secara berkala.</p><div class="cta"><button class="btn" data-act="bexp">${G.ic('download')}Backup Data (JSON)</button><label class="btn sec fl">${G.ic('upload')}Restore Data<input type="file" accept="application/json" data-chg="bimp" hidden></label><button class="btn bad" data-act="bclr">${G.ic('trash')}Clear Data</button></div></div>`};
+G.act.bexp=()=>{const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify(G.db)],{type:'application/json'}));a.download='growblox-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href);G.toast('Backup diunduh.')};
+G.act.bimp=async i=>{if(!i.files[0])return;try{const d=JSON.parse(await i.files[0].text());if(!Array.isArray(d.users)||!Array.isArray(d.orders)||!Array.isArray(d.products)||!d.set)throw 0;
+if(!confirm('Timpa semua data saat ini dengan file backup ini?'))return;d.notifs=d.notifs||[];d.log=d.log||[];d.session=null;G.db=G.clean(d);G.save();G.toast('Data dipulihkan. Silakan login.');G.go('auth')}catch(x){G.toast('File backup tidak valid.','bad')}};
+G.act.bclr=()=>{if(confirm('Hapus SEMUA data toko di browser ini? Tindakan ini tidak bisa dibatalkan.')){G.db=G.seed();G.save();G.toast('Data dihapus.');G.go('auth')}};
+})(GB);

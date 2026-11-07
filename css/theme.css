@@ -1,0 +1,23 @@
+/* Layout V2 dengan palet asli GROWBLOX: navy gelap, panel teal, border biru muda tebal, tombol bayangan hitam */
+.empty{text-align:center;color:var(--mu);padding:28px}.faq summary{font-weight:800}.faq p{margin-top:8px}
+textarea{width:100%;padding:12px 14px;background:var(--in);color:#fff;border:4px solid var(--bd);border-radius:12px;font:700 16px Roboto,sans-serif;outline:0}textarea:focus{box-shadow:0 0 0 3px var(--gold)}
+.side{position:fixed;inset:0 auto 0 0;width:248px;background:var(--bg2);border-right:4px solid var(--bd);display:flex;flex-direction:column;gap:6px;padding:14px 12px;z-index:60;overflow:auto;transform:translateX(-100%);transition:transform .25s}
+.side.open{transform:none}.side nav{display:grid;gap:4px;margin-top:12px}.side a{display:flex;gap:10px;align-items:center;padding:11px 12px;border-radius:10px;color:var(--mu);text-decoration:none;font-weight:700}
+.side a:hover,.side nav a.on{background:var(--p);color:#fff}.side nav a.on{box-shadow:inset 4px 0 0 var(--btn)}.side .brand{padding:4px 6px;color:#fff}.side .out{margin-top:auto}
+.nav{position:sticky;top:0;z-index:50;display:flex;align-items:center;gap:10px;padding:8px 16px;background:var(--bg2);border-bottom:4px solid var(--bd)}
+.hs{position:relative;flex:1;max-width:460px}.hs .ic{position:absolute;left:14px;top:12px}.hs input{min-height:44px;padding:8px 14px 8px 44px;border-width:3px}
+.me{display:flex;gap:6px;align-items:center;padding:8px 12px;border-radius:10px;background:var(--p);border:3px solid var(--bd);text-decoration:none;font-weight:800}.nav .bell{margin-left:auto}
+.bnav{position:fixed;left:0;right:0;bottom:0;z-index:55;display:flex;background:var(--bg2);border-top:4px solid var(--bd);padding:6px 4px calc(6px + env(safe-area-inset-bottom,0px))}
+.bnav a{flex:1;display:grid;justify-items:center;gap:2px;padding:6px 2px;text-decoration:none;color:var(--mu);font-size:11px;font-weight:800}.bnav a.on{color:#fff}.bnav a.on .ic{color:var(--btn)}
+.hero2{display:grid;grid-template-columns:1.1fr .9fr;gap:24px;padding:clamp(18px,4vw,34px);border-radius:18px;border:5px solid var(--bd);background:var(--p);box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.hero2 h1,.rhero h1,.rt h1{text-shadow:0 0 16px rgba(169,160,255,.6),0 0 38px rgba(169,160,255,.3)}.hero2 h1{font-size:clamp(28px,4.6vw,46px);margin-bottom:12px}.hero2 p{max-width:520px}
+.mini{display:grid;gap:8px;align-content:center}.mini h3{display:flex;gap:8px;align-items:center}
+.svc{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}.svc a{display:grid;gap:6px;padding:20px;border-radius:18px;text-decoration:none;border:5px solid var(--bd);background:var(--p);box-shadow:0 10px 28px rgba(0,0,0,.35)}
+.svc a:hover{border-color:var(--btn)}.svc .ic{width:28px;height:28px;color:var(--btn)}
+.sh{display:flex;justify-content:space-between;align-items:end;margin:30px 0 14px;gap:10px}.sh h2{margin:0}.sh a{color:var(--btn);font-weight:800}
+.ben{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}.ben .panel{padding:16px}.ben .ic{color:var(--btn)}.grid{grid-template-columns:repeat(auto-fill,minmax(280px,1fr))}
+.rr{border-width:3px}.lk{border-width:2px}.feed{margin-top:22px}.feed h2{display:flex;gap:8px;align-items:center;margin-bottom:12px}.fi small{color:var(--mu);margin-left:8px}
+.pop{position:fixed;left:16px;bottom:16px;z-index:70;display:flex;gap:10px;align-items:center;max-width:min(360px,calc(100vw - 32px));padding:12px 14px;background:var(--bg2);border:3px solid var(--bd);border-radius:12px;box-shadow:3px 3px 0 #000;animation:pop .25s ease}
+.pop[hidden]{display:none}.pop span{display:grid}.pop small{color:var(--mu)}.pop button{background:0;border:0;color:#fff;cursor:pointer;padding:4px}
+@media(min-width:900px){.pop{left:264px}.side{transform:none}.side~*{margin-left:248px}.burger,.bnav{display:none}.wrap{max-width:1320px;padding:28px 32px 56px}}
+@media(max-width:899px){#app{padding-bottom:76px}.burger{display:inline-flex}.me span{display:none}.toast{bottom:92px}.pop{bottom:88px}.side{box-shadow:12px 0 40px rgba(0,0,0,.6)}.hero2{grid-template-columns:1fr}}
